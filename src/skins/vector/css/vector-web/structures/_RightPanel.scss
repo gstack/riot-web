@@ -25,9 +25,9 @@ limitations under the License.
     order: 1;
 
     border-bottom: 1px solid $primary-hairline-color;
-    margin-right: 20px;
 
     flex: 0 0 70px;
+    padding-bottom: 2px;
 }
 
 /** Fixme - factor this out with the main header **/
@@ -38,6 +38,10 @@ limitations under the License.
     width: 100%;
     background-color: $primary-bg-color;
     margin-left: 0px;
+
+    position: relative;
+    left: 50px;
+    top: -5px;
 }
 
 .mx_RightPanel_headerButton {
@@ -61,6 +65,13 @@ limitations under the License.
     border-radius: 5px;
     background-color: $accent-color;
     opacity: 0.2;
+    display: none;
+}
+
+.mx_headerButton_active {
+    outline: 0;
+    -webkit-filter: brightness(125%);
+    filter: brightness(125%);
 }
 
 .mx_RightPanel_headerButton_badge {
@@ -79,15 +90,16 @@ limitations under the License.
 .mx_RightPanel .mx_MemberList,
 .mx_RightPanel .mx_MemberInfo,
 .mx_RightPanel_blank {
-    order: 2;
+    order: 3;
     flex: 1 1 0;
+    padding-left: 5px;
 }
 
 .mx_RightPanel_footer {
-    order: 3;
+    order: 4;
 
     border-top: 1px solid $primary-hairline-color;
-    margin-right: 20px;
+    margin-right: 0px;
 
     flex: 0 0 60px;
 }
@@ -116,7 +128,14 @@ limitations under the License.
 .mx_RightPanel_invite .mx_RightPanel_message {
     display: inline-block;
     vertical-align: top;
-    padding-left: 10px
+    padding-left: 10px;
+    padding-top: 7px;
+}
+
+.mx_RightPanel_invite {
+    order: 2;
+    margin: 22px;
+    margin-bottom: 5px;
 }
 
 .mx_MatrixChat_useCompactLayout {

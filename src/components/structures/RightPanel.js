@@ -147,18 +147,18 @@ module.exports = React.createClass({
         var inviteGroup;
         var panel;
 
-        var filesHighlight;
-        var membersHighlight;
-        var notificationsHighlight;
+        var filesHighlightClass;
+        var membersHighlightClass;
+        var notificationsHighlightClass;
         if (!this.props.collapsed) {
             if (this.state.phase == this.Phase.MemberList || this.state.phase === this.Phase.MemberInfo) {
-                membersHighlight = <div className="mx_RightPanel_headerButton_highlight"></div>;
+                membersHighlightClass = "mx_headerButton_active";
             }
             else if (this.state.phase == this.Phase.FilePanel) {
-                filesHighlight = <div className="mx_RightPanel_headerButton_highlight"></div>;
+                filesHighlightClass = "mx_headerButton_active";
             }
             else if (this.state.phase == this.Phase.NotificationPanel) {
-                notificationsHighlight = <div className="mx_RightPanel_headerButton_highlight"></div>;
+                notificationsHighlightClass = "mx_headerButton_active";
             }
         }
 
@@ -168,7 +168,6 @@ module.exports = React.createClass({
             var room = cli.getRoom(this.props.roomId);
             var user_is_in_room;
             if (room) {
-                membersBadge = room.getJoinedMembers().length;
                 user_is_in_room = room.hasMembershipState(
                     MatrixClientPeg.get().credentials.userId, 'join'
                 );
@@ -192,26 +191,20 @@ module.exports = React.createClass({
                         <AccessibleButton className="mx_RightPanel_headerButton"
                                 title={ _t('Members') } onClick={ this.onMemberListButtonClick }>
                             <div className="mx_RightPanel_headerButton_badge">{ membersBadge ? membersBadge : <span>&nbsp;</span>}</div>
-                            <TintableSvg src="img/icons-people.svg" width="25" height="25"/>
-                            { membersHighlight }
+                            <TintableSvg src="img/icons-people.svg" width="35" height="35" className={membersHighlightClass} />
                         </AccessibleButton>
                         <AccessibleButton
                                 className="mx_RightPanel_headerButton mx_RightPanel_filebutton"
                                 title={ _t('Files') } onClick={ this.onFileListButtonClick }>
                             <div className="mx_RightPanel_headerButton_badge">&nbsp;</div>
-                            <TintableSvg src="img/icons-files.svg" width="25" height="25"/>
-                            { filesHighlight }
+                            <TintableSvg src="img/icons-files.svg" width="35" height="35" className={filesHighlightClass} />
                         </AccessibleButton>
                         <AccessibleButton
                                 className="mx_RightPanel_headerButton mx_RightPanel_notificationbutton"
                                 title={ _t('Notifications') } onClick={ this.onNotificationListButtonClick }>
                             <div className="mx_RightPanel_headerButton_badge">&nbsp;</div>
-                            <TintableSvg src="img/icons-notifications.svg" width="25" height="25"/>
-                            { notificationsHighlight }
+                            <TintableSvg src="img/icons-notifications.svg" width="35" height="35" className={notificationsHighlightClass} />
                         </AccessibleButton>
-                        <div className="mx_RightPanel_headerButton mx_RightPanel_collapsebutton" title={ _t("Hide panel") } onClick={ this.onCollapseClick }>
-                            <TintableSvg src="img/minimise.svg" width="10" height="16"/>
-                        </div>
                     </div>;
         }
 
@@ -245,10 +238,11 @@ module.exports = React.createClass({
                 <div className="mx_RightPanel_header">
                     { buttonGroup }
                 </div>
+                { inviteGroup }
                 { panel }
-                <div className="mx_RightPanel_footer">
+                {/*<div className="mx_RightPanel_footer">
                     { inviteGroup }
-                </div>
+                </div>*/}
             </aside>
         );
     }

@@ -18,7 +18,7 @@ limitations under the License.
     height: 100%;
 
     margin-top: 12px;
-    margin-right: 20px;
+    margin-right: 0px;
 
     flex: 1;
 
@@ -55,6 +55,11 @@ limitations under the License.
     font-size: 14px;
     margin-bottom: 8px;
     width: 189px;
+    
+    margin: 0px;
+    width: 195px;
+    margin-left: 5px;
+    margin-bottom: 11px;
 }
 
 .mx_MemberList_query::-moz-placeholder {

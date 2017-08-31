@@ -19,6 +19,8 @@ limitations under the License.
 
     display: flex;
     flex-direction: column;
+
+    border-right: 2px solid rgba(118, 207, 166, 0.2);
 }
 
 .mx_LeftPanel_hideButton {
@@ -50,8 +52,8 @@ limitations under the License.
     order: 3;
 
     border-top: 1px solid rgba(118, 207, 166, 0.2);
-    margin-left: 16px; /* gutter */
-    margin-right: 16px; /* gutter */
+    padding-left: 16px; /* gutter */
+    padding-right: 16px; /* gutter */
     flex: 0 0 60px;
     z-index: 1;
 }

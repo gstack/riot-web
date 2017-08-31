@@ -16,13 +16,14 @@ limitations under the License.
 
 .mx_MemberInfo {
     margin-top: 20px;
-    padding-right: 20px;
+    padding-right: 5px;
     height: 100%;
     overflow-y: auto;
 }
 
 .mx_MemberInfo h2 {
     margin-top: 6px;
+    margin-left: 5px;
 }
 
 .mx_MemberInfo .mx_RoomTile_nameContainer {
@@ -34,7 +35,8 @@ limitations under the License.
 }
 
 .mx_MemberInfo .mx_RoomTile_name {
-    width: 160px;
+    width: 155px;
+    margin-left: 5px;
 }
 
 .mx_MemberInfo_cancel {
@@ -45,6 +47,7 @@ limitations under the License.
 
 .mx_MemberInfo_avatar {
     clear: both;
+    margin-left: 5px;
 }
 
 .mx_MemberInfo_avatar .mx_BaseAvatar {
@@ -56,6 +59,7 @@ limitations under the License.
 
 .mx_MemberInfo_profile {
     margin-bottom: 16px;
+    margin-left: 5px;
 }
 
 .mx_MemberInfo h3 {
